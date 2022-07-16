@@ -7,6 +7,7 @@ var cors = require('cors');
 // var bodyParser = require('body-parser');
 
 var indexRouter = require('./routes/index');
+var registerRouter = require('./routes/register');
 var usersRouter = require('./routes/users');
 
 var app = express();
@@ -25,6 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 
 app.use('/', indexRouter);
+app.use('/register', registerRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
